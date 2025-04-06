@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios';
 import { Function, Dashboard, Execution } from '../types';
 // Define your API base URL
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/';
 
 // Create axios instance with defaults
 const api = axios.create({
