@@ -179,6 +179,22 @@ class FunctionController {
     }
   }
 
+
+  async deleteAllFunction(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      await databaseService.deleteAllFunction();
+      res.status(204).send();
+    } catch (error) {
+      logger.error(`Error deleting function: ${error}`);
+      res.status(500).json({
+        message: 'Failed to delete function',
+        statusCode: 500,
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  }
+
   /**
    * Get execution history for a function
    */

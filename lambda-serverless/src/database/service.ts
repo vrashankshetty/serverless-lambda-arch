@@ -197,6 +197,26 @@ class DatabaseService {
     }
   }
 
+  async deleteAllFunction(): Promise<boolean> {
+    try {
+      const result = await Function.deleteMany({});
+      
+      if (result) {
+        logger.info(`Deleted all function with ID`);
+        return true;
+      }
+      
+      return false;
+    } catch (error) {
+      if (error instanceof Error) {
+        logger.error(`Error deleting function: ${error.message}`);
+        throw error;
+      }
+      throw new Error('Unknown error deleting function');
+    }
+  }
+
+
   /**
    * Record function execution
    */
@@ -226,6 +246,25 @@ class DatabaseService {
         throw error;
       }
       throw new Error('Unknown error fetching executions');
+    }
+  }
+
+  async deleteAllExecution(): Promise<boolean> {
+    try {
+      const result = await Execution.deleteMany({});
+      
+      if (result) {
+        logger.info(`Deleted all execution with ID`);
+        return true;
+      }
+
+      return false;
+    } catch (error) {
+      if (error instanceof Error) {
+        logger.error(`Error deleting execution: ${error.message}`);
+        throw error;
+      }
+      throw new Error('Unknown error deleting function');
     }
   }
 }

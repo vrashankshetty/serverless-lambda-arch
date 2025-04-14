@@ -10,6 +10,7 @@ const FunctionSchema = new Schema(
   {
     name: {
       type: String,
+      unique: true,
       required: [true, 'Function name is required'],
       trim: true,
       maxlength: [50, 'Function name cannot be more than 50 characters'],

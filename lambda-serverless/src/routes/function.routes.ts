@@ -6,6 +6,7 @@ const router = Router();
 
 router.post('/', functionController.createFunction.bind(functionController));
 router.get('/', functionController.getAllFunctions.bind(functionController));
+router.delete('/all', functionController.deleteAllFunction.bind(functionController));
 router.get('/:id', functionController.getFunctionById.bind(functionController));
 router.put('/:id', functionController.updateFunction.bind(functionController));
 router.delete('/:id', functionController.deleteFunction.bind(functionController));

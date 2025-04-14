@@ -101,7 +101,14 @@ const functionApi = {
       throw handleApiError(error);
     }
   },
-
+  deleteAll: async (): Promise<void> => {
+    try {
+      const response = await api.delete(`/functions/all`);
+      return response.data;
+    } catch (error) {
+      throw handleApiError(error);
+    }
+  },
   getExecutions: async (id: string): Promise<Execution[]> => {
     try {
       const response = await api.get(`/functions/${id}/executions`);
@@ -114,6 +121,15 @@ const functionApi = {
   getAllExecutions: async (): Promise<Execution[]> => {
     try {
       const response = await api.get(`/executions/`);
+      return response.data;
+    } catch (error) {
+      throw handleApiError(error);
+    }
+  },
+
+  deleteAllExecutions: async (): Promise<void> => {
+    try {
+      const response = await api.delete(`/executions/all`);
       return response.data;
     } catch (error) {
       throw handleApiError(error);
@@ -143,7 +159,7 @@ const functionApi = {
   // Admin: Clean up all containers
   cleanupContainers: async (): Promise<{ message: string }> => {
     try {
-      const response = await api.post('/executions/run/admin/cleanup');
+      const response = await api.post('/executions/admin/cleanup');
       return response.data;
     } catch (error) {
       throw handleApiError(error);

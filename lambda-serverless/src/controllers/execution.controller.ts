@@ -245,6 +245,22 @@ class ExecutionController {
   }
 
 
+  async deleteAllExecution(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;   
+      await databaseService.deleteAllExecution();   
+      res.status(204).send();
+    } catch (error) {
+      logger.error(`Error testing function: ${error}`);
+      res.status(500).json({
+        message: 'Failed to test function',
+        statusCode: 500,
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  }
+
+
   /**
    * Clean up all containers (admin endpoint)
    */

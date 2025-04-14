@@ -6,6 +6,7 @@ import executionController from '../controllers/execution.controller';
 const router = Router();
 
 router.post('/run/:route', executionController.executeFunction);
+router.delete('/all', executionController.deleteAllExecution);
 router.get('/', executionController.getAllExecution);
 router.get('/:id', executionController.getEachExecution);
 router.post('/admin/cleanup', executionController.cleanupContainers);
