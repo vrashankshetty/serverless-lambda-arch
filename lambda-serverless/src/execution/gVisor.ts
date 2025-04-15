@@ -168,7 +168,7 @@ class GVisorExecutionEngine {
       HostConfig: {
         Memory: 128 * 1024 * 1024, // 128MB
         NanoCpus: 250000000, // 0.25 CPU
-        Runtime:virtualizationType=='gVisor'?this.runtimeName:'runc'
+        Runtime:virtualizationType=='microvm'?this.runtimeName:'runc'
       }
     });
   
