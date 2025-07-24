@@ -40,7 +40,7 @@ A full-stack serverless function execution platform built with TypeScript, featu
 - **Execution Analytics**: Track performance metrics and execution history
 
 ## 📁 Project Structure
-
+```
 serverless-lambda-arch/
 ├── client/                    # Next.js frontend application
 │   ├── app/                  # Next.js app router pages
@@ -65,6 +65,8 @@ serverless-lambda-arch/
 │   ├── docs/                # Documentation
 │   ├── scripts/             # Setup and utility scripts
 │   └── workspaces/          # Runtime containers and build files
+
+```
 
 ## 🛠️ Technology Stack
 
