@@ -24,7 +24,8 @@ export function ExecutionChart({data}:ExecutionStatsProps) {
   return (
     <ResponsiveContainer width="100%" height={350}>
       <LineChart data={data}>
-        <XAxis dataKey="time" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+{/*         <XAxis dataKey="time" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} /> */}
+        <XAxis dataKey="startTime" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
         <YAxis
           stroke="#888888"
           fontSize={12}
